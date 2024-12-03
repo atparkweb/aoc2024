@@ -4,13 +4,6 @@ open System
 open System.IO
 
 module public Day1 =
-    let private getProjectRootDirectory () =
-        let baseDir = AppDomain.CurrentDomain.BaseDirectory
-        Directory.GetParent(baseDir).Parent.Parent.Parent.FullName
-        
-    let private getAbsoluteContentPath filePath =
-        Path.Combine(getProjectRootDirectory(), filePath)
-
     let private listsFromFile filePath=
         let lines = File.ReadAllLines(filePath)
         let list1, list2 =
@@ -36,7 +29,7 @@ module public Day1 =
         (loop list1 list2 0)
         
     let solve =
-        let (x, y) = listsFromFile (getAbsoluteContentPath "input/day1.txt")
+        let (x, y) = listsFromFile (CommonUtils.getAbsoluteContentPath "input/day1.txt")
         if List.length x <> List.length y
         then raise (ArgumentException "The input lists must be the same length")
         else
