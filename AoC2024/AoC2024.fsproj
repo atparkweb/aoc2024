@@ -8,6 +8,7 @@
     <ItemGroup>
         <Content Include="input\day1.txt" />
         <Content Include="input\day2.txt" />
+        <Compile Include="CommonUtils.fs" />
         <Compile Include="Day1.fs" />
         <Compile Include="Day2.fs" />
         <Compile Include="Program.fs"/>
