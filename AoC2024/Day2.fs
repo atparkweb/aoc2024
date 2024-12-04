@@ -1,8 +1,5 @@
 namespace AoC24
 
-open System
-open System.IO
-
 module public Day2 =
     let private MAX_CHANGE = 3
 
@@ -26,9 +23,7 @@ module public Day2 =
     let private isSafe report =
         (isOrdered report) && (isLevelSafe report)
 
-    let solve =
-        CommonUtils.getAbsoluteContentPath("input/day2.txt")
-            |> File.ReadAllLines
-            |> Array.map (fun line -> line.Split " " |> Array.map Int32.Parse)
-            |> Array.filter isSafe
-            |> Array.length
+    let solve (input: int[][]) =
+        input
+        |> Array.filter isSafe
+        |> Array.length
