@@ -3,6 +3,6 @@
 module Program =
     [<EntryPoint>]
     let main _args =
-        let answer = Day1.solve
+        let answer = Day2.solve
         printfn $"The answer is: {answer}"
         0
