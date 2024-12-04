@@ -1,8 +1,5 @@
 ﻿namespace AoC24
 
-open System
-open System.IO
-
 module Program =
     [<EntryPoint>]
     let main _args =
@@ -15,5 +12,5 @@ module Program =
         let day2 = (2, Day2.solve input2)
         
         // Print out the solutions to the console
-        [|day1; day2|] |> Array.iter (fun (i, a) -> printfn $"Day {i} answer: {a}")
+        [| day1; day2; |] |> Array.iter (fun (i, a) -> printfn $"Day {i} answer: {a}")
         0
