@@ -33,9 +33,20 @@ module CommonUtils =
     Converts a text file containing integers on each line to an two-dimensional array of integers.
     </summary>
     <param name="filePath">The relative path to the text file. Relative to the project directory</param>
-    <returns>An array of each line from the file. Each line converted to an array of integers.
+    <returns>An array of each line from the file. Each line converted to an array of integers.</returns>
     *)
     let numericalDataFromFile filePath =
         getAbsoluteContentPath(filePath)
         |> File.ReadAllLines
         |> Array.map (fun line -> (Array.map Int32.Parse (line.Split " ")))
+        
+    (** <summary>
+    Gets the file contents as a byte array from a relative file path.
+    </summary>
+    <param name="filePath">The relative path to the text file. Relative to the project directory</param>
+    <returns>A byte array containing the file data.</returns>
+    *)
+    let bytesFromFile filePath =
+        let file = getAbsoluteContentPath(filePath)
+        File.ReadAllBytes file
+        
