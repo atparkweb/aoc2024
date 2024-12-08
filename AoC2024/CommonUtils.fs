@@ -41,12 +41,11 @@ module CommonUtils =
         |> Array.map (fun line -> (Array.map Int32.Parse (line.Split " ")))
         
     (** <summary>
-    Gets the file contents as a byte array from a relative file path.
+    Gets the file contents as a string from a relative file path.
     </summary>
     <param name="filePath">The relative path to the text file. Relative to the project directory</param>
-    <returns>A byte array containing the file data.</returns>
+    <returns>A string containing the file data.</returns>
     *)
-    let bytesFromFile filePath =
+    let stringFromFile filePath =
         let file = getAbsoluteContentPath(filePath)
-        File.ReadAllBytes file
-        
+        File.ReadAllText file

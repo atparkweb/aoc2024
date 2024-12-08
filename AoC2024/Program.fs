@@ -12,7 +12,7 @@ module Program =
         let day2 = (2, Day2.solve input2)
         
         // Solve Day 3-1
-        let input3 = CommonUtils.bytesFromFile "input/day3.txt"
+        let input3 = CommonUtils.stringFromFile "input/day3.txt"
         let day3 = (3, Day3.solve input3)
         
         // Print out the solutions to the console
